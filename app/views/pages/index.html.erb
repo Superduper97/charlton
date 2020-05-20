@@ -1,0 +1,88 @@
+<div class="welcome">
+  <h1> Welcome to Charlton Farm Services</h1>
+  <h3>  Charlton Farm Services is a small family run business located in Angus, Scotland. We sell a wide variety of used farm machinery. If you have any questions or are interested in any of the machinery we have to offer, please don’t be hesitant to contact us. </h3>
+</div>
+
+<div class="index-conatct-info">
+  <h3> <i class="fas fa-phone-alt"></i> Ernest Charlton - 07970506155</h3>
+  <h3> <i class="fas fa-envelope"></i> Charltonfarmservices@gmail.com</h3>
+</div>
+
+<div class="index-top-page">
+  <div class="index-machinery-for-sale">
+    <h1> <%= link_to "Machinery For Sale " , machinery_path %> <i class="fas fa-arrow-circle-right"></i> </h1>
+  </div>
+
+  <div class="plough-parts">
+    <h1><%= link_to "Plough Parts", ploughparts_path %> <i class="fas fa-arrow-circle-right"></i> </h1>
+  </div>
+
+</div>
+
+
+<div class="recently-added">
+  <h3> Recently added</h3>
+  <div class="index-new-products">
+    <div class="index-new-products-images">
+      <div class="owl-carousel owl-theme">
+      <% Admin::Product.all.order(created_at: :desc).limit(6).each do |admin_product| %>
+        <div class="index-new-product">
+          <div class="index-new-product-image">
+            <% if admin_product.image.attached? %>
+            <%= link_to image_tag(admin_product.image), product_path(admin_product.id) %>
+            <% else %>
+              <%= link_to image_tag("/assets/coming-soon.png"), product_path(admin_product.id) %>
+            <% end %>
+            <%= link_to admin_product.title, product_path(admin_product.id) %>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="recently-added">
+  <h3> Spotlight</h3>
+  <div class="index-new-products">
+    <div class="index-new-products-images">
+      <div class="owl-carousel owl-theme">
+      <% Admin::Product.all.each do |admin_product| %>
+        <% if admin_product.spotlight == true %>
+          <div class="index-new-product">
+            <div class="index-new-product-image">
+              <% if admin_product.image.attached? %>
+                <%= link_to image_tag(admin_product.image), product_path(admin_product.id) %>
+              <% else %>
+                <%= link_to image_tag("/assets/coming-soon.png"), product_path(admin_product.id) %>
+              <% end %>
+              <%= link_to admin_product.title, product_path(admin_product.id) %>
+            </div>
+          </div>
+        <%else %>
+          <% nil %>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    $('.owl-carousel').owlCarousel({
+        loop:false,
+        margin:10,
+        nav:true,
+        responsive:{
+            0:{
+                items:3
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:3
+            }
+        }
+    });
+</script>

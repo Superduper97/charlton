@@ -1,0 +1,41 @@
+<div class="machinery-search-filter">
+<%= search_form_for @search, url: machinery_path do |f| %>
+ <div class="search-filter-title">
+  <%= f.label :title_cont, "Search" %>
+  <%= f.text_field :title_cont %>
+ </div>
+
+  <div class="search-filter-category">
+  <%= f.label :category_eq, "Category" %>
+  <%= f.select :category_eq, Admin::Category.all.map { |s| [s.category] }, {:include_blank => 'All'} %>
+  </div>
+
+    <div class="search-filter-submit">
+  <%= f.submit %>
+    </div>
+<% end %>
+</div>
+
+<div class="machinery-product-display">
+  <div class="machinery-products">
+    <% @products.each do |products| %>
+      <div class="machinery-product">
+        <div class="machinery-image">
+          <%if products.image.attached? %>
+            <td><%= link_to image_tag(products.image), product_path(products.id) %></td>
+          <% else %>
+            <%= link_to image_tag("/assets/coming-soon.png"), product_path(products.id) %>
+          <% end %>
+        </div>
+        <div class="machinery-info">
+          <div class="machinery-title">
+            <h3><%= link_to products.title, product_path(products.id) %></h3>
+          </div>
+          <div class="machinery-price">
+            <h2> £<%= products.price %></h2>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

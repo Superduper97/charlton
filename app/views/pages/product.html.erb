@@ -1,0 +1,97 @@
+<div class="productshow">
+
+  <% @product = Admin::Product.find(params[:id]) %>
+
+  <div class="product-info">
+
+  <div class="product-title">
+    <h3> <%= @product.title%> </h3>
+  </div>
+
+    <div class="product-price">
+      <h3> £<%= @product.price%> </h3>
+    </div>
+
+  </div>
+
+  <div class="productslider">
+  <div class="owl-carousel owl-theme">
+    <% @product.images.each do |image| %>
+      <div>
+        <%= image_tag(image) %>
+      </div>
+    <% end %>
+  </div>
+  <script>
+      $('.owl-carousel').owlCarousel({
+          loop:true,
+          margin:10,
+          responsiveClass:true,
+          responsive:{
+              0:{
+                  items:1,
+                  nav:true
+              },
+              600:{
+                  items:1,
+                  nav:false
+              },
+              1000:{
+                  items:1,
+                  nav:true,
+                  loop:false
+              }
+          }
+      })
+  </script>
+</div>
+
+<div class="productdiscription">
+
+  <h3>Specification</h3>
+  <h4> Brand: <%=@product.brand %></h4>
+  <h4> Hours: <%=@product.hours %></h4>
+  <h4> Year: <%=@product.year %></h4>
+
+ <h3> <b> Desscription </b>  </h3>
+ <p> <%= @product.content%> </p>
+</div>
+
+
+</div>
+
+<div class="contact-form">
+
+  <%= form_for @contact do |f| %>
+    <% if flash[:error].present? %>
+      <p> flash[:error]</p>
+    <% end %>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true %>
+    <br>
+    <br>
+    <%= f.label :phone %>
+    <%= f.text_field :phone, required: true %>
+    <br>
+    <br>
+    <%= f.label :email %>
+    <%= f.text_field :email, required: true %>
+    <br>
+    <br>
+    <%= f.label :message %>
+    <%= f.text_area :message, as: :text %>
+    <br>
+    <br>
+    <%= f.submit 'Send Message', class: "button" %>
+    <br>
+    <br>
+  <% end %>
+</div>
+
+
+
+
+
+
+
+

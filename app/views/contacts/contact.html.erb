@@ -1,0 +1,50 @@
+<div class="contacts">
+
+  <div class="contact">
+    <%= image_tag ("/assets/Phone.png"), class: "logo"%>
+    <h5>077970506155 </h5>
+  </div>
+  <div class="contact">
+    <%= image_tag ("/assets/Mail.png"), class: "logo"%>
+    <h5>Charltonfarmservices@gmail.com </h5>
+  </div>
+
+  <div class="contact">
+    <%= image_tag ("/assets/location.png"), class: "logo"%>
+    <h5>2 Little Herdhill way <br> Kirriemuir <br> Angus <br> DD8 5JZ</h5>
+  </div>
+
+</div>
+  <div class="contact-us">
+    <h1> Contact us</h1>
+    <h3> </h3>
+  </div>
+
+
+  <div class="contact-form">
+
+    <%= form_for @contact do |f| %>
+      <% if flash[:error].present? %>
+        <p> flash[:error]</p>
+      <% end %>
+      <%= f.label :name %>
+      <%= f.text_field :name, required: true %>
+      <br>
+      <br>
+      <%= f.label :phone %>
+      <%= f.text_field :phone, required: true %>
+      <br>
+      <br>
+      <%= f.label :email %>
+      <%= f.text_field :email, required: true %>
+      <br>
+      <br>
+      <%= f.label :message %>
+      <%= f.text_area :message, as: :text %>
+      <br>
+      <br>
+      <%= f.submit 'Send Message', class: "button" %>
+      <br>
+      <br>
+  <% end %>
+  </div>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CharltonFarmServices</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://kit.fontawesome.com/815c8a8f8a.js" crossorigin="anonymous"></script>
+    <%= csrf_meta_tags %>
+
+  </head>
+  <body>
+  <div class="container">
+    <div class="main">
+  <header>
+
+    <%= render 'layouts/alerts' %>
+    <div class="logo-container">
+      <div class="logo">
+    <%= image_tag("/assets/Charlton-HQ.png") %>
+      </div>
+    </div>
+    <nav>
+      <div class="topnav">
+        <ul>
+          <li><%= active_link_to 'Home', root_path, :active => :exclusive %>  </li>
+          <li><%= active_link_to "Contact", contact_path %></li>
+          <li><%= active_link_to "Machinery", machinery_path %></li>
+          <li><%= active_link_to "Plough Parts", ploughparts_path %></li>
+          <div class="rightnav">
+            <% if current_user.present? %>
+              <li><%= active_link_to 'Admin', '/admin' %></li>
+              <% if current_user %>
+                <li><%= active_link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+              <% else %>
+                <li><%= active_link_to 'Sign in', new_user_session_path%></li>
+              <% end %>
+            <% end %>
+          </div>
+
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+    <%= yield %>
+    </div>
+  </div>
+  <footer>
+    <div class="links">
+      <p> Useful links</p>
+      <p> <%=link_to "Home", root_path %></p>
+      <p> <%=link_to "Contact", contact_path %></p>
+      <p> <%=link_to "Machinery", machinery_path %></p>
+    </div>
+
+    <div class="index-Contact">
+      <p> <i class="fas fa-phone-alt"></i> 07970506155</p>
+      <p> <i class="fas fa-envelope"></i> Charltonfarmserives@gmail.com</p>
+    </div>
+
+
+  </footer>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  </body>
+</html>

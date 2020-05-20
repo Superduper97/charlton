@@ -1,0 +1,12 @@
+<%= render 'layouts/adminnavbar' %>
+
+<div class="admincontainer">
+
+<h1>Editing Product</h1>
+
+<%= render 'formedit', admin_product: @admin_product %>
+
+<%= link_to 'Show', @admin_product %> |
+<%= link_to 'Back', admin_path %>
+
+</div>

@@ -1,0 +1,52 @@
+<%= render 'layouts/adminnavbar' %>
+
+<div class="machinery-search-filter">
+  <%= search_form_for @search, url: admin_path do |f| %>
+    <div class="search-filter-title">
+      <%= f.label :title_cont, "Search" %>
+      <%= f.text_field :title_cont %>
+    </div>
+
+    <div class="search-filter-category">
+      <%= f.label :category_eq, "Category" %>
+      <%= f.select :category_eq, Admin::Category.all.map { |s| [s.category] }, {:include_blank => 'All'} %>
+    </div>
+
+    <div class="search-filter-submit">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
+
+<div class="admintable">
+<table>
+  <thead>
+  <tr>
+    <th>Image</th>
+    <th><%= sort_link @search, :id, "ID" %></th>
+    <th><%= sort_link @search, :title, "Title" %></th>
+    <th><%= sort_link @search, :price, "Price (£)" %></th>
+    <th><%= sort_link @search, :created_at, "Added" %></th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @products.each do |admin_product| %>
+    <tr>
+      <%if admin_product.image.attached? %>
+        <td><%= link_to image_tag(admin_product.image), product_path(admin_product.id) %></td>
+        <% else %>
+        <td> <%= link_to image_tag("/assets/coming-soon.png"), product_path(admin_product.id) %></td>
+        <% end %>
+      <td><%= admin_product.id %></td>
+      <td><%= admin_product.title %></td>
+      <td> <%= admin_product.price %></td>
+      <td> <%= admin_product.created_at %></td>
+        <td><%= link_to 'Show', admin_product %> <%= link_to 'Edit', edit_admin_product_path(admin_product) %> <%= link_to 'Delete', admin_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>
+
+

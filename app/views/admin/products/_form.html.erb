@@ -1,0 +1,77 @@
+<%= form_with(model: admin_product, local: true) do |form| %>
+  <% if admin_product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admin_product.errors.count, "error") %> prohibited this admin_product from being saved:</h2>
+
+      <ul>
+      <% admin_product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="new-form">
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Cover%>
+    <%= form.file_field :image%>
+  </div>
+
+  <div class="field">
+    <%= form.label :images%>
+    <%= form.file_field :images, multiple: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="new-specification">
+
+    <div class="new-specification-brand">
+      <%= form.label :brand %>
+      <%= form.text_field :brand %>
+      <%= form.check_box :show_brand%>
+    </div>
+
+    <div class="new-specification-hours">
+      <%= form.label :hours %>
+      <%= form.text_field :hours %>
+      <%= form.check_box :show_hours%>
+    </div>
+
+    <div class="new-specification-brand">
+      <%= form.label :year %>
+      <%= form.text_field :year %>
+      <%= form.check_box :show_year %>
+    </div>
+
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+
+  <%= form.label :Spotlight %>
+  <%= form.check_box :spotlight %>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.select :category, Admin::Category.all.map { |s| [s.category] }, {  :prompt => 'All'  } %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+</div>
+
+<% end %>

@@ -1,0 +1,47 @@
+<%= render 'layouts/adminnavbar' %>
+
+<div class="admincontainer">
+
+  <p>
+    <strong>Title:</strong>
+    <%= @admin_product.title %>
+  </p>
+  <div class="adminshow">
+    <p><strong>Content:</strong>
+      <%= @admin_product.content %>
+    </p>
+  </div>
+  <div class="imgshow">
+    <p>
+      <strong>Cover photo</strong>
+    </p>
+    <% if @admin_product.image.attached? %>
+      <%= image_tag(@admin_product.image) %>
+    <% else %>
+      <% nil %>
+    <% end %>
+  </div>
+
+  <div class="imgshow">
+    <p>
+      <strong>Images</strong>
+    </p>
+    <% (0...@admin_product.images.count).each do |image| %>
+      <%= image_tag(@admin_product.images[image]) %>
+    <% end %>
+  </div>
+
+  <div class="show-specification">
+
+  <div class="show-specification-brand">
+    <p> Brand:<%= @admin_product.brand%> <%= @admin_product.show_brand%></p>
+    <p> Hours:<%= @admin_product.hours%> <%= @admin_product.show_hours%></p>
+    <p> Year:<%= @admin_product.year%> <%= @admin_product.show_year%></p>
+    <p> Spotlight:<%= @admin_product.spotlight%></p>
+  </div>
+
+  </div>
+<%= link_to 'Edit', edit_admin_product_path(@admin_product) %> |
+<%= link_to 'Back', admin_path %>
+
+</div>

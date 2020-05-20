@@ -1,0 +1,808 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+/*
+ */
+@import "font-awesome";
+@import 'owl.carousel';
+@import 'owl.theme.default';
+
+/* Global ------------------------------------------------------------------------------------------------------------*/
+
+body {
+  box-sizing: border-box;
+
+  height: 100%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 0%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width:2000px) {
+  body {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
+
+
+@media screen and (max-width:1500px) {
+  body {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+
+@media screen and (max-width:1000px) {
+  body {
+    margin: 0;
+  }
+}
+
+footer {
+  border-radius: 5px;
+  background-color: #333;
+  display: inline-block;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+
+.links{
+  margin: 1% 0% 1% 3%;
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.links a{
+  color: white;
+}
+
+.links p{
+  margin: 0;
+  padding: 0;
+}
+
+.address{
+  margin: 0 auto;
+  width: 30%;
+}
+
+.index-Contact{
+  margin: 1% 3% 1% 0%;
+  float: right;
+  color: white;
+  vertical-align: top;
+}
+/* Logo --------------------------------------------------------------------------------------------------------------*/
+
+.logo-container{
+  margin: 0 auto;
+  width: 100%;
+}
+
+.logo{
+  min-width: 150px;
+  margin: 0 auto;
+  width: 20%;
+  text-align: center;
+}
+
+.logo img{
+  width: 100%;
+}
+
+
+/* Topnav ------------------------------------------------------------------------------------------------------------*/
+
+.topnav{
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.topnav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  border-radius: 5px;
+}
+
+.topnav ul li {float: left;}
+
+.topnav ul li a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.topnav ul li a:hover:not(.active) {background-color: #111;}
+
+.topnav ul li a.active {background-color: #4CAF50;}
+
+.rightnav{
+  float: right;
+}
+
+
+/* index ------------------------------------------------------------------------------------------------------------*/
+
+.welcome{
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.welcome h3{
+  border: solid 1px #BBBBBB;
+  border-radius: 5px;
+  background: #fcfcfc;
+  padding: 2%;
+}
+
+.index-conatct-info{
+  margin: 0 auto;
+  text-align: center;
+  border-bottom: solid 1px #BBBBBB;
+  width: 70%;
+}
+
+.owl-carousel .owl-stage {
+  align-items: center;
+  text-align: center;
+  float: none;
+  display: block;
+  width: 70%;
+}
+
+.index-new-products{
+  margin: 0 auto;
+  width: 75%;
+}
+
+.recently-added{
+  text-align: center;
+}
+
+.machinery-info{
+  color: #333333;
+}
+
+.index-new-products a{
+  background-color: transparent;
+  text-decoration: none;
+  color: black;
+}
+
+.index-new-products a:hover{
+  color: grey;
+  width: 100%;
+}
+
+.index-new-products a:visited{
+  width: 100%;
+}
+
+.index-top-page{
+  text-align: center;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+.index-machinery-for-sale{
+  border-bottom: solid 10px forestgreen;
+  border-top: solid 10px forestgreen;
+  width: 50%;
+  width: 300px;
+  display: inline-block;
+  margin: 2%;
+}
+
+.index-machinery-for-sale a{
+  color: black;
+  text-decoration: none;
+  background: transparent;
+}
+
+.index-machinery-for-sale a:hover{
+  color: grey;
+}
+
+.plough-parts{
+  border-bottom: solid 10px red;
+  border-top: solid 10px red;
+  width: 50%;
+  width: 300px;
+  display: inline-block;
+  margin: 2%;
+}
+
+.plough-parts a{
+  color: black;
+  text-decoration: none;
+  background: transparent;
+}
+
+.plough-parts a:hover{
+  color: grey;
+}
+
+.index-top-page img{
+  width: 60%;
+}
+/* Contact ------------------------------------------------------------------------------------------------------------*/
+
+.contacts{
+  width: 100%;
+  text-align: center;
+}
+
+.contacts img{
+  width: 100px;
+}
+
+.contact{
+  display: inline-block;
+  margin: 5% 5% 3% 5%;
+  vertical-align: top;
+
+}
+
+@media screen and (max-width:750px) {
+  .contact{
+    display: inline;
+  }
+}
+
+.contact-form{
+  padding: 2%;
+  border-radius: 5px;
+  text-align: center;
+  background: #fcfcfc;
+  border-radius: 5px;
+  border: #cccccc solid 1px;
+  margin-bottom: 2%;
+}
+
+.contact-form input[type=text]{
+  width: 95%;
+  padding: 1.5% 1.5%;
+  margin: 1%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width:750px) {
+  .contact-form input[type=text]{
+    padding: 1% 1%;
+  }
+}
+
+.contact-form textarea{
+  width: 95%;
+}
+
+.contact-form input[type=submit] {
+  width: 95%;
+  background-color: forestgreen;
+  color: white;
+  padding: 14px 20px;
+  margin: 1%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-form input[type=submit]:hover {
+  background-color: green;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-us{
+  margin-bottom: 3%;
+  text-align: center;
+}
+/* Machinery ---------------------------------------------------------------------------------------------------------*/
+
+.machinery-product-display{
+}
+
+.machinery-products{
+  text-align: center;
+  width: 100%;
+}
+
+.machinery-product{
+  margin: 1%;
+  display: inline-block;
+  width: 30%;
+  background: #fcfcfc;
+  border-radius: 5px;
+  border: #cccccc solid 1px;
+}
+
+@media screen and (max-width:750px) {
+  .machinery-product{
+    width: 50%;
+    border: #cccccc solid 1px;
+    background: #fcfcfc;
+
+  }
+}
+
+.machinery-image{
+  margin: 1%;
+}
+
+@media screen and (max-width:750px) {
+  .machinery-image{
+
+  }
+}
+
+.machinery-image img{
+  width: 97%;
+  margin: 1%;
+}
+
+
+
+@media screen and (max-width:750px) {
+  .machinery-image img{
+    width: 95%;
+  }
+}
+
+.machinery-price{
+  color: green;
+}
+
+.machinery-info{
+  color: #333333;
+}
+
+
+.machinery-info a{
+  background-color: transparent;
+  text-decoration: none;
+  color: #333333;
+}
+
+.machinery-info a:hover{
+  color: grey;
+}
+
+.machinery-info a:visited{
+  width: 100%;
+}
+
+.machinery-image a {
+  background: transparent;
+}
+
+.machinery-image a:hover {
+  opacity: 0.8;
+}
+
+
+.machinery-info a:visited{
+}
+
+.machinery-search-filter{
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  border-bottom: solid 0.1px grey;
+
+}
+
+.search-filter-title{
+  display: inline-block;
+  vertical-align: bottom;
+  width: 30%;
+  margin: 1%;
+  padding: 1%;
+  text-align: center;
+}
+
+@media screen and (max-width:750px) {
+  .search-filter-title {
+    width: 100%;
+  }
+}
+.search-filter-title input[type=text], select{
+  width: 100%;
+}
+
+@media screen and (max-width:750px) {
+  .search-filter-title input[type=text], select{
+    display: inline;
+    width: 50%;
+  }
+}
+
+.search-filter-category input[type=text], select{
+  width: 100%;
+  min-height: 21px;
+}
+
+.search-filter-category{
+  display: inline-block;
+  vertical-align: bottom;
+  width: 30%;
+  margin: 1%;
+  padding: 1%;
+}
+
+  @media screen and (max-width:750px) {
+    .search-filter-category {
+      width: 100%;
+    }
+  }
+
+@media screen and (max-width:750px) {
+  .search-filter-category input[type=text], select{
+    display: inline;
+    width: 50%;
+  }
+}
+
+.search-filter-submit{
+  text-align: center;
+  vertical-align: bottom;
+  display: inline-block;
+  margin: 1%;
+  padding: 1%;
+  width: 20%;
+}
+
+.search-filter-submit input[type=submit]{
+  width: 100%;
+}
+
+@media screen and (max-width:750px) {
+  .search-filter-submit{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:750px) {
+  .search-filter-submit input[type=submit]{
+    width: 20%;
+    display: inline;
+  }
+}
+
+/* P
+/* Product--------------------------------------------------------------------------------------------------------------*/
+
+.productshow{
+  border: solid black 1px;
+  margin-bottom: 3%;
+  padding: 1%;
+  display: inline-block;
+  width: 97%;
+}
+
+.productslider{
+  width: 50%;
+}
+
+.productdiscription{
+  padding: 1%;
+  float: right;
+  width: 38%;
+  display: inline-block;
+  vertical-align: top;
+  background: #f7f7f7;
+  border-radius: 5px;
+  border: #cccccc solid 1px;
+  white-space: pre-line;
+}
+
+.product-info{
+}
+
+.product-price{
+  display: inline-block;
+  float: right;
+  color: green;
+}
+
+.product-title{
+  display: inline-block;
+
+}
+
+.productslider{
+  display: inline-block;
+  width: 59%;
+}
+
+.product-specification{
+  float: right;
+}
+
+.productdiscription h3{
+  margin: 0;
+  padding: 0;
+}
+
+.productdiscription h4{
+  margin: 0;
+  padding: 0;
+}
+
+/* Admin -------------------------------------------------------------------------------------------------------------*/
+/* Admin -------------------------------------------------------------------------------------------------------------*/
+/* Admin -------------------------------------------------------------------------------------------------------------*/
+/* Admin -------------------------------------------------------------------------------------------------------------*/
+/* Admin -------------------------------------------------------------------------------------------------------------*/
+
+/* Admin-topnav -------------------------------------------------------------------------------------------------------------*/
+
+.admin-topnav{
+margin: 1% 5% 1% 5%;
+}
+
+.admin-topnav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #c0c0c0;
+  border-radius: 5px;
+}
+
+.admin-topnav ul li {float: left;}
+
+.admin-topnav ul li a{
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+}
+
+.admin-topnav ul li a:hover{
+  background: grey;
+}
+
+/* Admin -------------------------------------------------------------------------------------------------------------*/
+
+table{
+  width: 100%;
+
+  margin: 0;
+  vertical-align: top;
+}
+
+.admincontainer{
+  margin: 0;
+  width: 100%;
+  display: inline-block;
+  padding: 0;
+  vertical-align: top;
+}
+
+.admintable{
+  padding: 0;
+  margin-top: 0;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  white-space: pre-line;
+  vertical-align: top;
+}
+
+.admintable a:link {
+  text-decoration: none;
+  background: transparent;
+  color: black;
+}
+
+.admintable a:visited {
+  text-decoration: none;
+  background: transparent;
+  color: black;
+}
+
+.admintable a:hover{
+  color: grey;
+}
+
+.admintable img{
+  width: 100px;
+}
+
+.admintable a:hover img{
+  opacity: 0.8;
+}
+
+.form{
+  white-space: pre-line;
+}
+
+
+/* Sidebar------------------------------------------------------------------------------------------------------------*/
+
+.adminsidebar {
+  margin: 0% 2% 0% 0%;
+  padding-right: 2%;
+  height: 100px;
+  min-width: 5%;
+  float: left;
+  display: inline-block;
+  list-style-type: none;
+  z-index: 1;
+  background-color: #333;
+}
+
+.adminsidebar a {
+  padding-top: 3%;
+  padding-left: 3%;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+.adminsidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* New ------------------------------------------------------------------------------------------------------------*/
+
+/* _form ------------------------------------------------------------------------------------------------------------*/
+
+textarea {
+  width: 95%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  margin: 1%;
+}
+
+
+.new-form input[type=text]{
+  width: 95%;
+  padding: 2% 2%;
+  margin: 1%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width:750px) {
+  .new-form input[type=text]{
+    padding: 1% 1%;
+  }
+}
+
+.new-form input[type=submit] {
+  width: 100%;
+  background-color: forestgreen;
+  color: white;
+  padding: 14px 20px;
+  margin: 1%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.new-form input[type=submit]:hover {
+  width: 100%;
+  background-color: green;
+  color: white;
+  padding: 14px 20px;
+  margin: 1%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* show --------------------------------------------------------------------------------------------------------------*/
+
+.imgshow img{
+  width: 100px;
+}
+
+.adminshow{
+  white-space: pre-line;
+}
+
+/* edit--------------------------------------------------------------------------------------------------------------*/
+
+.edit-images{
+}
+
+.edit-images img{
+  width: 100%;
+}
+
+.edit-image{
+  display: inline-block;
+  width: 15%;
+  margin: 1%;
+}
+
+.edit-image img{
+  display: inline-block;
+}
+
+.edit-cover-image{
+  width: 15%;
+  margin: 1%;
+}
+
+.edit-cover-image img{
+  width: 100%;
+}
+
+.edit-form input[type=text]{
+  width: 95%;
+  padding: 2% 2%;
+  margin: 1% 0% 1% 1%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width:750px) {
+  .edit-form input[type=text]{
+    padding: 1% 1%;
+  }
+}
+
+.edit-form input[type=submit] {
+  width: 100%;
+  background-color: forestgreen;
+  color: white;
+  padding: 14px 20px;
+  margin: 1% 0% 1% 1%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-form input[type=submit]:hover {
+  width: 100%;
+  background-color: green;
+  color: white;
+  padding: 14px 20px;
+  margin: 1% 0% 1% 1%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+
+
+
